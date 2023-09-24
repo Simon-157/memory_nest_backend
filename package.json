@@ -1,0 +1,13 @@
+{
+  "name": "memory_nest_backend",
+  "version": "1.0.0",
+  "description": "An app for connecting dementia patient, their caretakers and volunteers",
+  "main": "index.js",
+  "repository": "https://github.com/Simon-157/memory_nest_backend.git",
+  "author": "Simon Junior Boateng",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
