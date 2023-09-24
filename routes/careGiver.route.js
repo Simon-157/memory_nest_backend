@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const careGiverController = require('../controllers/careGiver.controller');
+const careGiverService = require('../services/core/careGiver.services');
 
 // TODO: Create middlewares for data validating
 router
   .route('/')
-  .get(careGiverController.readAllCareGivers)
-  .post(careGiverController.createCareGiver);
+  .get(careGiverService.readAllCareGivers)
+  .post(careGiverService.createCareGiver);
 
 router
   .route('/:id')
-  .get(careGiverController.readCareGiver)
-  .put(careGiverController.updateCareGiver)
-  .delete(careGiverController.deleteCareGiver);
+  .get(careGiverService.readCareGiver)
+  .put(careGiverService.updateCareGiver)
+  .delete(careGiverService.deleteCareGiver);
 
 module.exports = router;

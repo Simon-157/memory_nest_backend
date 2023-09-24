@@ -2,7 +2,6 @@ import { db } from "../config/firebase.config";
 
 const volunteerRef = db.collection('volunteers');
 
-
 // Create a new document in the volunteers Firebase collection
 async function createVolunteer(data) {
   try {
@@ -75,7 +74,6 @@ async function deleteVolunteer(id) {
 }
 
 export default {
-  initVolunteers,
   createVolunteer,
   readAllVolunteers,
   readVolunteer,

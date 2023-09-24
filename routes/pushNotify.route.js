@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/pushNotify.controller'); 
+const pushNotifyService = require('../services/core/pushNotify.services'); 
 
 router.route('/')
-  .get(controller.readAllPushNotifyLogs)
-  .post(controller.createPushNotifyLog);
+  .get(pushNotifyService.getAllPushNotifyLogs)
+  .post(pushNotifyService.addPushNotifyLog);
 
 
-router.put('/accept', controller.findPushNotifyLog);
+router.put('/accept', pushNotifyService.acceptPushNotifyRequest);
 
 router.route('/:id')
-  .get(controller.readLatestPushNotifyLog)
-  .put(controller.updatePushNotifyLog);
+  .get(pushNotifyService.getLatestPushNotifyLog)
+  .put(pushNotifyService.updatePushNotifyStatus);
 
 module.exports = router;

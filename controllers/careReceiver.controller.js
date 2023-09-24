@@ -1,6 +1,5 @@
 import { db } from "../config/firebase.config";
 
-
 const careReceiverRef = db.collection('care_receiver');
 
 // Create a document in the care_receiver Firebase collection
@@ -46,12 +45,11 @@ async function readCareReceiver(id) {
   }
 }
 
-// Update the document with the matching id in the care_giver Firebase collection
+// Update the document with the matching id in the care_receiver Firebase collection
 async function updateCareReceiver(id, data) {
   try {
     // Remove care giver modification during normal update
     data.CareGiver = [];
-
     const updates = {};
     for (const key in data) {
       if (data[key] !== undefined && data[key] !== null) {

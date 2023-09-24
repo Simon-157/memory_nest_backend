@@ -2,7 +2,6 @@ const { db } = require("../config/firebase.config");
 
 const travelLogRef = db.collection('track_log');
 
-
 // Create a new document in the track_log Firebase collection
 async function createTravelLog(data) {
   try {
