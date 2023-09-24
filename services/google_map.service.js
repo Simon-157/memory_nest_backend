@@ -39,7 +39,7 @@ class DirectionsResult {
 }
 
 // Map a JSON object to a Node object
-function mapToNode(data) {
+const mapToNode = (data) => {
   try {
     const jsonBytes = JSON.stringify(data);
     const node = JSON.parse(jsonBytes);
@@ -50,7 +50,7 @@ function mapToNode(data) {
 }
 
 // Retrieve directions from Google Maps API
-async function retrieveDirections(start, end) {
+const retrieveDirections = async (start, end) => {
   try {
     start = start.replace(/ /g, '+');
     end = end.replace(/ /g, '+');

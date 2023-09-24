@@ -1,3 +1,5 @@
+import { retrieveDirections } from '../google_map.service';
+
 const pushNotifyLogController = require('../../controllers/pushNotify.controller');
 
 const addPushNotifyLog = async (req, res) =>  {
@@ -59,9 +61,6 @@ const getLatestPushNotifyLog = async (req, res)=> {
   }
   
 
-
-
-
 const acceptPushNotifyRequest = async (req, res) =>{
     try {
       const requestBody = req.body;
@@ -117,7 +116,7 @@ const acceptPushNotifyRequest = async (req, res) =>{
           return;
         }
   
-        const directions = await logic.RetrieveDirections(
+        const directions = await retrieveDirections(
           `${pushNotifyLog.StartLocation.Lat},${pushNotifyLog.StartLocation.Lng}`,
           careGiver.Address
         );
