@@ -9,5 +9,6 @@ const firebaseConfig = {
 admin.initializeApp(firebaseConfig);
 
 const db = admin.firestore();
+const fcm = admin.messaging();
 
-module.exports = { admin, db };
+module.exports = { admin, db, fcm };
